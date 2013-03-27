@@ -1,6 +1,8 @@
 
 package uk.co.sparedice.doom2d1;
 
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
 /**
  * A Layer of tiles which represents a part of the game environment.
  * A group of tiles in the game world where the tiles within a given layer do 
@@ -10,15 +12,32 @@ package uk.co.sparedice.doom2d1;
 public class Layer {
     
     private int[][] tileData; //Stores tiles type id
-    private int width = 0;
-    private int height = 0;
+    private int width = 0; //Number of tiles wide
+    private int height = 0; //Number of tiles high
+    
+    //Type constants
+    public static final int TYPE_BG = 0;
+    public static final int TYPE_PLATFORM = 1;
+    public static final int TYPE_CUSTOM = 2;
+    
+    //Type of layer
+    private int layerType = TYPE_BG;
 
+    public Layer(int width, int height, int type) {
+        this.width = width;
+        this.height = height;
+        this.layerType = type;
+        tileData = new int[width][height];
+    }
+    
     /* Sets the initial tile data */
     public void setTileData(int[][] tileData) {
         this.tileData = tileData;
         this.width = tileData.length;
         if(width > 0){
             this.height = tileData[0].length;
+        } else {
+            this.height = 0;
         }
     }
     
@@ -47,6 +66,11 @@ public class Layer {
         } else {
             setTileAt(x, y, type);
         }
+        throw new NotImplementedException();
+    }
+
+    public int getLayerType() {
+        return layerType;
     }
 
 }

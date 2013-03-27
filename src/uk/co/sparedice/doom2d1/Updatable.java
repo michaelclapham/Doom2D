@@ -14,7 +14,6 @@ public abstract class Updatable {
     public Rectangle touchRect = null;
     public boolean autoTouchable = true;
     public boolean autoDrawable = true;
-    public boolean currentlyTracked = false;
     
     public void setGame(TileEngineGame game){
         this.game = game;
