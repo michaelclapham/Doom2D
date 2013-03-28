@@ -1,10 +1,12 @@
 package uk.co.sparedice.doom2d1;
 
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 
 /**
  *
  * @author Michael
+ * @author Fraser
  */
 public class Sector {
     
@@ -27,6 +29,12 @@ public class Sector {
         this(0, game);
     }
 
+    public void save(FileOutputStream out) {
+    	for (Layer l : allLayers) {
+    		l.save(out);
+    	}
+    }
+    
     public TileEngineGame getGame() {
         return game;
     }

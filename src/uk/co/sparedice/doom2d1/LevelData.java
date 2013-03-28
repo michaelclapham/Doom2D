@@ -1,6 +1,8 @@
 
 package uk.co.sparedice.doom2d1;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 
 /**
@@ -11,6 +13,22 @@ public class LevelData {
     
     private ArrayList<Sector> allSectors;
     private ArrayList<Sector> visibleSectors;
+    
+    public LevelData() {
+    	allSectors = new ArrayList<Sector>();
+    	visibleSectors = new ArrayList<Sector>();
+    }
+    
+    public void save(String levelName) {
+		try {
+			FileOutputStream out = new FileOutputStream(levelName);
+			for (Sector s : allSectors) {
+	    		s.save(out);
+	    	}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+    }
     
     public void addSector(Sector s){
         allSectors.add(s);

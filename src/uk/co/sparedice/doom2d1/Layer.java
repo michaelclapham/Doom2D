@@ -1,7 +1,9 @@
 
 package uk.co.sparedice.doom2d1;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 /**
  * A Layer of tiles which represents a part of the game environment.
@@ -28,6 +30,36 @@ public class Layer {
         this.height = height;
         this.layerType = type;
         tileData = new int[width][height];
+    }
+    
+    /*  Makes a layer from a FileInputStream so you can read multiple layers in from the same file
+     *  Warning: close FileInputStream some time after using this constructor
+     */ 
+    public Layer(int width, int height, int type, FileInputStream in) {
+    	this(width, height, type);
+    	for (int i=0; i<width; i++) {
+    		for (int j=0; j<height; j++) {
+    			try {
+					tileData[i][j] = in.read();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+    		}
+    	}
+    }
+    
+    
+    // Saves file using FileOutputStream, used in LevelData
+    public void save(FileOutputStream out) {
+    	for (int i=0; i<width; i++) {
+    		for (int j=0; j<height; j++) {
+				try {
+					out.write(tileData[i][j]);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+    		}
+    	}
     }
     
     /* Sets the initial tile data */
@@ -66,7 +98,6 @@ public class Layer {
         } else {
             setTileAt(x, y, type);
         }
-        throw new NotImplementedException();
     }
 
     public int getLayerType() {
