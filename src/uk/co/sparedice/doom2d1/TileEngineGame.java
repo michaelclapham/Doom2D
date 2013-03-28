@@ -13,7 +13,7 @@ import org.newdawn.slick.SlickException;
  *
  * @author Michael
  */
-public class TileEngineGame extends BasicGame {
+public class TileEngineGame extends BasicGame { 
 
     /* Stores Window width and height in pixels */
     public int currentWindowWidth, currentWindowHeight;

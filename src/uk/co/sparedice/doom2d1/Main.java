@@ -10,7 +10,7 @@ import org.newdawn.slick.SlickException;
  *
  * @author Michael
  */
-public class Main {
+public class Main { 
 
     /**
      * @param args the command line arguments

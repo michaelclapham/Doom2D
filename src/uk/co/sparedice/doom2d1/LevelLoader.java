@@ -27,7 +27,7 @@ public class LevelLoader {
         //TODO: Implement code to load tile data and initial game objects. (FRASER)
     	LevelData data = new LevelData();
     	
-    	DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+    	DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();  
 		try {
 			DocumentBuilder db = dbf.newDocumentBuilder();
 			Document dom = db.parse("maps/" + levelName + ".xml");

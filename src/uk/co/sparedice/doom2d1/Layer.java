@@ -15,7 +15,7 @@ public class Layer {
     
     private int[][] tileData; //Stores tiles type id
     private int width = 0; //Number of tiles wide
-    private int height = 0; //Number of tiles high
+    private int height = 0; //Number of tiles high  
     
     //Type constants
     public static final int TYPE_BG = 0;

@@ -8,7 +8,7 @@ import org.newdawn.slick.geom.Rectangle;
  *
  * @author Michael
  */
-public abstract class Updatable {
+public abstract class Updatable {   
     
     public TileEngineGame game;
     public Rectangle touchRect = null;

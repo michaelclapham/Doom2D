@@ -12,7 +12,7 @@ import org.newdawn.slick.Graphics;
  *
  * @author Michael
  */
-public class SquareParticleEffect {
+public class SquareParticleEffect { 
     
     private int sections = 4;
     private int sectionWidth = 10;

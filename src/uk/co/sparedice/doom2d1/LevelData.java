@@ -16,7 +16,7 @@ public class LevelData {
     
     public LevelData() {
     	allSectors = new ArrayList<Sector>();
-    	visibleSectors = new ArrayList<Sector>();
+    	visibleSectors = new ArrayList<Sector>();   
     }
     
     public void save(String levelName) {

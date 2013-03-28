@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * @author Michael
  * @author Fraser
  */
-public class Sector {
+public class Sector {   
     
     //TODO: Make storage for Actors and tile layers within a sector
     private TileEngineGame game;
